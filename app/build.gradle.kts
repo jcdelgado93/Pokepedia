@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -56,6 +58,30 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
+    // Networking (API)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // UI & Images
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.navigation.compose)
+
+    // Debugging
+    debugImplementation(libs.androidx.ui.tooling)
+
+    // Icons
+    implementation(libs.androidx.compose.material.icons.extended)
+
     // Splash screen
     implementation(libs.androidx.core.splashscreen)
+
+    // Hilt Dagger
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation)
+    ksp(libs.hilt.android.compiler)
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
 }
