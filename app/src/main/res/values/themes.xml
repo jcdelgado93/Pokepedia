@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.Pokepedia" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Pokepedia.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_pokeball_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.Pokepedia</item>
+    </style>
 </resources>
